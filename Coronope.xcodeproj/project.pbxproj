@@ -17,6 +17,10 @@
 		A109C18E241E140800CE231B /* CoronopeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109C18D241E140800CE231B /* CoronopeService.swift */; };
 		A109C190241E142800CE231B /* CoronopeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109C18F241E142800CE231B /* CoronopeTarget.swift */; };
 		A109C1B4241E176C00CE231B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A109C1B3241E176C00CE231B /* Main.storyboard */; };
+		A109C1B6241E297000CE231B /* CoronopeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109C1B5241E297000CE231B /* CoronopeConstants.swift */; };
+		A109C1B8241E2AB300CE231B /* CoronopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109C1B7241E2AB300CE231B /* CoronopeModel.swift */; };
+		A109C1C4241E6A8100CE231B /* indoimage.png in Resources */ = {isa = PBXBuildFile; fileRef = A109C1C3241E6A8000CE231B /* indoimage.png */; };
+		A109C1C6241E70D300CE231B /* globalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A109C1C5241E70D300CE231B /* globalImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		A109C18D241E140800CE231B /* CoronopeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeService.swift; sourceTree = "<group>"; };
 		A109C18F241E142800CE231B /* CoronopeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeTarget.swift; sourceTree = "<group>"; };
 		A109C1B3241E176C00CE231B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A109C1B5241E297000CE231B /* CoronopeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeConstants.swift; sourceTree = "<group>"; };
+		A109C1B7241E2AB300CE231B /* CoronopeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeModel.swift; sourceTree = "<group>"; };
+		A109C1C3241E6A8000CE231B /* indoimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indoimage.png; path = Assets.xcassets/indoimage.png; sourceTree = "<group>"; };
+		A109C1C5241E70D300CE231B /* globalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = globalImage.png; path = Assets.xcassets/globalImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,14 +73,16 @@
 			isa = PBXGroup;
 			children = (
 				A109C186241E139000CE231B /* API */,
-				A109C187241E139E00CE231B /* Service */,
+				A109C1BF241E590F00CE231B /* Constants */,
 				A109C188241E13A500CE231B /* Model */,
-				A109C18A241E13AE00CE231B /* Controller */,
 				A109C189241E13AA00CE231B /* View */,
+				A109C187241E139E00CE231B /* Service */,
 				A109C170241E134A00CE231B /* AppDelegate.swift */,
 				A109C172241E134A00CE231B /* SceneDelegate.swift */,
 				A109C17B241E134A00CE231B /* Assets.xcassets */,
+				A109C1C5241E70D300CE231B /* globalImage.png */,
 				A109C17D241E134A00CE231B /* LaunchScreen.storyboard */,
+				A109C1C3241E6A8000CE231B /* indoimage.png */,
 				A109C180241E134A00CE231B /* Info.plist */,
 			);
 			path = Coronope;
@@ -98,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				A109C18B241E13EA00CE231B /* CoronopeResponseWrapper.swift */,
+				A109C1B7241E2AB300CE231B /* CoronopeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,18 +116,19 @@
 		A109C189241E13AA00CE231B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A109C176241E134A00CE231B /* NewsViewController.swift */,
+				A109C174241E134A00CE231B /* StatsViewController.swift */,
 				A109C1B3241E176C00CE231B /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A109C18A241E13AE00CE231B /* Controller */ = {
+		A109C1BF241E590F00CE231B /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				A109C174241E134A00CE231B /* StatsViewController.swift */,
-				A109C176241E134A00CE231B /* NewsViewController.swift */,
+				A109C1B5241E297000CE231B /* CoronopeConstants.swift */,
 			);
-			path = Controller;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A109C1C6241E70D300CE231B /* globalImage.png in Resources */,
 				A109C17F241E134A00CE231B /* LaunchScreen.storyboard in Resources */,
+				A109C1C4241E6A8100CE231B /* indoimage.png in Resources */,
 				A109C17C241E134A00CE231B /* Assets.xcassets in Resources */,
 				A109C1B4241E176C00CE231B /* Main.storyboard in Resources */,
 			);
@@ -194,8 +208,10 @@
 				A109C175241E134A00CE231B /* StatsViewController.swift in Sources */,
 				A109C190241E142800CE231B /* CoronopeTarget.swift in Sources */,
 				A109C18E241E140800CE231B /* CoronopeService.swift in Sources */,
+				A109C1B6241E297000CE231B /* CoronopeConstants.swift in Sources */,
 				A109C171241E134A00CE231B /* AppDelegate.swift in Sources */,
 				A109C173241E134A00CE231B /* SceneDelegate.swift in Sources */,
+				A109C1B8241E2AB300CE231B /* CoronopeModel.swift in Sources */,
 				A109C18C241E13EA00CE231B /* CoronopeResponseWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
