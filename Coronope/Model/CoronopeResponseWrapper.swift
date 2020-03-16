@@ -20,5 +20,6 @@ struct AttributeDetail : Decodable {
     let Confirmed: Int?
     let Recovered: Int?
     let Deaths: Int?
+    let Country_Region : String?
     let value: Int?
 }

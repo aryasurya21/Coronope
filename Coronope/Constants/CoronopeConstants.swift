@@ -9,8 +9,9 @@
 import Foundation
 
 struct CoronopeConstants {
-    static let CountryID = 116
     static let indoAPI = 1
     static let globalAPI = 2
-    static let fontSize = 60.0
+    static let localFontSize = 60.0
+    static let globalFontSize = 45.0
+    static let countryName = "Indonesia"
 }

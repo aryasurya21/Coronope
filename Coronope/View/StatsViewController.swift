@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class StatsViewController: UIViewController {
 
@@ -20,36 +21,50 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         coronopeService.delegate = self
-        coronopeService.fetchAllCases()
+        initData()
     }
     
+    func initData(){
+        asyncFethcingData()
+    }
+      
+    func asyncFethcingData(){
+        let group = DispatchGroup()
+        group.enter()
+        coronopeService.fetchLocalCases()
+        coronopeService.fetchGlobalConfirmedCases()
+        group.leave()
+        group.wait()
+        self.setupStyle()
+    }
     
     func setupStyle(){
-        self.confirmedLabelID.textColor = .yellow
         self.confirmedLabelGlobal.textColor = .yellow
+        self.confirmedLabelID.textColor = .yellow
         self.deathLabelID.textColor = .red
         self.recoveredLabelID.textColor = .green
         
-        self.confirmedLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.fontSize))
-        self.confirmedLabelGlobal.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.fontSize))
-        self.deathLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.fontSize))
-        self.recoveredLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.fontSize))
+        self.confirmedLabelGlobal.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.globalFontSize))
+        self.confirmedLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
+        self.deathLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
+        self.recoveredLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
     }
 }
 
 
 extension StatsViewController : CoronopeServiceDelegate {
+    func didGetGlobalData(coronopeModel: CoronopeModel) {
+        DispatchQueue.main.async {
+            self.confirmedLabelGlobal.text = "\(coronopeModel.coronopeGlobal?.value ?? 0)"
+        }
+    }
     
-    func didGetData(coronopeModel: CoronopeModel) {
+    func didGetLocalData(coronopeModel: CoronopeModel) {
         DispatchQueue.main.async {
             self.confirmedLabelID.text = "\( coronopeModel.coronopeIndo?.confirmed ?? 0)"
-            self.confirmedLabelGlobal.text = "\(coronopeModel.coronopeGlobal?.value ?? 0)"
             self.deathLabelID.text = "\(coronopeModel.coronopeIndo?.deaths ?? 0)"
             self.recoveredLabelID.text = "\(coronopeModel.coronopeIndo?.recovered ?? 0)"
-        
-            self.setupStyle()
         }
-      
     }
     
     func didFailWithError(error: Error) {

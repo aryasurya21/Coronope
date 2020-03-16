@@ -9,7 +9,8 @@
 import Foundation
 
 protocol CoronopeServiceDelegate {
-    func didGetData(coronopeModel: CoronopeModel)
+    func didGetGlobalData(coronopeModel: CoronopeModel)
+    func didGetLocalData(coronopeModel : CoronopeModel)
     func didFailWithError(error: Error)
 }
 
@@ -29,12 +30,15 @@ class CoronopeService {
             switch apiType {
                 case CoronopeConstants.indoAPI:
                     var coronopeIndoModel = CoronopeIndoModel(confirmed: 0, recovered: 0, deaths: 0)
-                    let data = decodedData.features[CoronopeConstants.CountryID].attributes
-                    
-                    coronopeIndoModel.confirmed = data.Confirmed!
-                    coronopeIndoModel.deaths = data.Deaths!
-                    coronopeIndoModel.recovered = data.Recovered!
-                    
+                    let datas = decodedData
+                    for data in datas.features {
+                        if(data.attributes.Country_Region!.elementsEqual(CoronopeConstants.countryName)){
+                            coronopeIndoModel.confirmed = data.attributes.Confirmed!
+                            coronopeIndoModel.deaths = data.attributes.Deaths!
+                            coronopeIndoModel.recovered = data.attributes.Recovered!
+                            break
+                        }
+                    }
                     coronopeModel.coronopeIndo = coronopeIndoModel
                     return coronopeModel
                 
@@ -66,7 +70,14 @@ class CoronopeService {
 
                 if let safeData = data {
                     if let parsedData = self.parseJson(coronaData: safeData,apiType: apiType){
-                        self.delegate?.didGetData(coronopeModel: parsedData)
+                        switch apiType {
+                        case CoronopeConstants.globalAPI:
+                            self.delegate?.didGetGlobalData(coronopeModel: parsedData)
+                        case CoronopeConstants.indoAPI:
+                            self.delegate?.didGetLocalData(coronopeModel: parsedData)
+                        default:
+                            print("error API Type")
+                        }
                     }
                 }
             }
@@ -75,23 +86,22 @@ class CoronopeService {
         }
     }
 
-    
-    public func fetchAllCases(){
+    public func fetchLocalCases(){
         endPoint = "\(baseURL)\(CoronopeTarget.localAllCases)"
         performRequest(with: endPoint, with: CoronopeConstants.indoAPI)
     }
     
-    public func fetchConfirmedCases(){
+    public func fetchGlobalConfirmedCases(){
         endPoint = "\(baseURL)\(CoronopeTarget.globalTotalConfirmedCases)"
         performRequest(with: endPoint, with: CoronopeConstants.globalAPI)
     }
       
-    public func fetchTotalRecovered(){
+    public func fetchGlobalTotalRecovered(){
         endPoint = "\(baseURL)\(CoronopeTarget.globalTotalRecovered)"
         performRequest(with: endPoint, with: CoronopeConstants.globalAPI)
     }
       
-    public func fetchTotalDeaths(){
+    public func fetchGlobalTotalDeaths(){
         endPoint = "\(baseURL)\(CoronopeTarget.globalTotalDeaths)"
         performRequest(with: endPoint, with: CoronopeConstants.globalAPI)
     }

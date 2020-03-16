@@ -21,9 +21,11 @@
 		A109C1B8241E2AB300CE231B /* CoronopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109C1B7241E2AB300CE231B /* CoronopeModel.swift */; };
 		A109C1C4241E6A8100CE231B /* indoimage.png in Resources */ = {isa = PBXBuildFile; fileRef = A109C1C3241E6A8000CE231B /* indoimage.png */; };
 		A109C1C6241E70D300CE231B /* globalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A109C1C5241E70D300CE231B /* globalImage.png */; };
+		E4140AA8797AD5F71DF67926 /* Pods_Coronope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1533C98C628096C00132097 /* Pods_Coronope.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B525AE26EC3571FA2B62761 /* Pods-Coronope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronope.debug.xcconfig"; path = "Target Support Files/Pods-Coronope/Pods-Coronope.debug.xcconfig"; sourceTree = "<group>"; };
 		A109C16D241E134A00CE231B /* Coronope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coronope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A109C170241E134A00CE231B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A109C172241E134A00CE231B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		A109C1B7241E2AB300CE231B /* CoronopeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeModel.swift; sourceTree = "<group>"; };
 		A109C1C3241E6A8000CE231B /* indoimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indoimage.png; path = Assets.xcassets/indoimage.png; sourceTree = "<group>"; };
 		A109C1C5241E70D300CE231B /* globalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = globalImage.png; path = Assets.xcassets/globalImage.png; sourceTree = "<group>"; };
+		AF12FF8715D164AF931E248E /* Pods-Coronope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronope.release.xcconfig"; path = "Target Support Files/Pods-Coronope/Pods-Coronope.release.xcconfig"; sourceTree = "<group>"; };
+		D1533C98C628096C00132097 /* Pods_Coronope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coronope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4140AA8797AD5F71DF67926 /* Pods_Coronope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4076A982F8AA0158FE58AA4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1533C98C628096C00132097 /* Pods_Coronope.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A109C164241E134A00CE231B = {
 			isa = PBXGroup;
 			children = (
 				A109C16F241E134A00CE231B /* Coronope */,
 				A109C16E241E134A00CE231B /* Products */,
+				B26104716FB2C7D186F6A189 /* Pods */,
+				4076A982F8AA0158FE58AA4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +146,16 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		B26104716FB2C7D186F6A189 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B525AE26EC3571FA2B62761 /* Pods-Coronope.debug.xcconfig */,
+				AF12FF8715D164AF931E248E /* Pods-Coronope.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A109C183241E134A00CE231B /* Build configuration list for PBXNativeTarget "Coronope" */;
 			buildPhases = (
+				DFF0A1B255739C7DDE1771CA /* [CP] Check Pods Manifest.lock */,
 				A109C169241E134A00CE231B /* Sources */,
 				A109C16A241E134A00CE231B /* Frameworks */,
 				A109C16B241E134A00CE231B /* Resources */,
+				549B35B0BBB25CD71F717503 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +225,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		549B35B0BBB25CD71F717503 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coronope/Pods-Coronope-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coronope/Pods-Coronope-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coronope/Pods-Coronope-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFF0A1B255739C7DDE1771CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coronope-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A109C169241E134A00CE231B /* Sources */ = {
@@ -346,6 +415,7 @@
 		};
 		A109C184241E134A00CE231B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B525AE26EC3571FA2B62761 /* Pods-Coronope.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -363,6 +433,7 @@
 		};
 		A109C185241E134A00CE231B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF12FF8715D164AF931E248E /* Pods-Coronope.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
