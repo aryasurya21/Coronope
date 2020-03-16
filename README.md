@@ -17,6 +17,9 @@ Pull requests are welcome. :D
 ## Demo
 ![](demo.gif)
 
+## Credit
+- github.com/alfianlosari for the nCoV API 
+
 ## License
 
 MIT License
