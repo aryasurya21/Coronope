@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import PromiseKit
 
 class StatsViewController: UIViewController {
 
-    var coronopeService = CoronopeService()
+    var coronopeService = CoronopeStatsService()
     
     @IBOutlet weak var confirmedLabelID: UILabel!
     @IBOutlet weak var confirmedLabelGlobal: UILabel!
@@ -39,11 +38,6 @@ class StatsViewController: UIViewController {
     }
     
     func setupStyle(){
-        self.confirmedLabelGlobal.textColor = .yellow
-        self.confirmedLabelID.textColor = .yellow
-        self.deathLabelID.textColor = .red
-        self.recoveredLabelID.textColor = .green
-        
         self.confirmedLabelGlobal.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.globalFontSize))
         self.confirmedLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
         self.deathLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
@@ -52,7 +46,7 @@ class StatsViewController: UIViewController {
 }
 
 
-extension StatsViewController : CoronopeServiceDelegate {
+extension StatsViewController : CoronopeStatsServiceDelegate {
     func didGetGlobalData(coronopeModel: CoronopeModel) {
         DispatchQueue.main.async {
             self.confirmedLabelGlobal.text = "\(coronopeModel.coronopeGlobal?.value ?? 0)"

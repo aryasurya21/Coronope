@@ -14,4 +14,8 @@ struct CoronopeConstants {
     static let localFontSize = 60.0
     static let globalFontSize = 45.0
     static let countryName = "Indonesia"
+    
+    struct TableConstants {
+        static let cellIdentifer = "reusableCellIdentifier"
+    }
 }

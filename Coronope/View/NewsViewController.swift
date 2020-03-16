@@ -9,10 +9,11 @@
 import UIKit
 
 class NewsViewController: UIViewController {
-
+    var service = CoronopeNewsService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        service.parseNews()
     }
 
 

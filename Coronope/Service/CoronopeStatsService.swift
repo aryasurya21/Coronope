@@ -8,22 +8,26 @@
 
 import Foundation
 
-protocol CoronopeServiceDelegate {
+protocol CoronopeStatsServiceDelegate {
     func didGetGlobalData(coronopeModel: CoronopeModel)
     func didGetLocalData(coronopeModel : CoronopeModel)
     func didFailWithError(error: Error)
 }
 
-class CoronopeService {
+class CoronopeStatsService {
+    let baseURL: String
+    var endPoint: String
+    var delegate: CoronopeStatsServiceDelegate?
     
-    let baseURL = CoronopeTarget.baseURL
-    var endPoint: String = ""
-    var delegate: CoronopeServiceDelegate?
+    init() {
+        baseURL = CoronopeStatsTarget.baseURL
+        endPoint = ""
+    }
     
     func parseJson(coronaData: Data, apiType: Int) -> CoronopeModel? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(CoronopeResponseWrapper
+            let decodedData = try decoder.decode(CoronopeStatsResponseWrapper
                 .self, from: coronaData)
             var coronopeModel = CoronopeModel()
             
@@ -76,7 +80,7 @@ class CoronopeService {
                         case CoronopeConstants.indoAPI:
                             self.delegate?.didGetLocalData(coronopeModel: parsedData)
                         default:
-                            print("error API Type")
+                            print("error API type hehe")
                         }
                     }
                 }
@@ -87,22 +91,22 @@ class CoronopeService {
     }
 
     public func fetchLocalCases(){
-        endPoint = "\(baseURL)\(CoronopeTarget.localAllCases)"
+        endPoint = "\(baseURL)\(CoronopeStatsTarget.localAllCases)"
         performRequest(with: endPoint, with: CoronopeConstants.indoAPI)
     }
     
     public func fetchGlobalConfirmedCases(){
-        endPoint = "\(baseURL)\(CoronopeTarget.globalTotalConfirmedCases)"
+        endPoint = "\(baseURL)\(CoronopeStatsTarget.globalTotalConfirmedCases)"
         performRequest(with: endPoint, with: CoronopeConstants.globalAPI)
     }
       
     public func fetchGlobalTotalRecovered(){
-        endPoint = "\(baseURL)\(CoronopeTarget.globalTotalRecovered)"
+        endPoint = "\(baseURL)\(CoronopeStatsTarget.globalTotalRecovered)"
         performRequest(with: endPoint, with: CoronopeConstants.globalAPI)
     }
       
     public func fetchGlobalTotalDeaths(){
-        endPoint = "\(baseURL)\(CoronopeTarget.globalTotalDeaths)"
+        endPoint = "\(baseURL)\(CoronopeStatsTarget.globalTotalDeaths)"
         performRequest(with: endPoint, with: CoronopeConstants.globalAPI)
     }
 }

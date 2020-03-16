@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CoronopeResponseWrapper: Decodable {
+struct CoronopeStatsResponseWrapper: Decodable {
     let features: [Feature]
 }
 
