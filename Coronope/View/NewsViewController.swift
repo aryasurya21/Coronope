@@ -54,6 +54,8 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        if let url = URL(string:articleList[indexPath.row].newsUrl ?? CoronopeConstants.defaultUrlPath){
+            UIApplication.shared.open(url)
+        }
     }
 }
