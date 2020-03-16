@@ -16,6 +16,7 @@ struct CoronopeConstants {
     static let countryName = "Indonesia"
     static let defaultImagePath = "https://upload.wikimedia.org/wikipedia/commons/2/22/Earth_Western_Hemisphere_transparent_background.png"
     static let defaultUrlPath = "https://www.google.com"
+    static let interval = 1800.0
     struct TableConstants {
         static let cellIdentifer = "reusableCellIdentifier"
         static let nibName = "NewsTableViewCell"

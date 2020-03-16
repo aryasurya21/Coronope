@@ -11,7 +11,7 @@ import UIKit
 class StatsViewController: UIViewController {
 
     var coronopeService = CoronopeStatsService()
-    
+    var timer = Timer()
     @IBOutlet weak var confirmedLabelID: UILabel!
     @IBOutlet weak var confirmedLabelGlobal: UILabel!
     @IBOutlet weak var recoveredLabelID: UILabel!
@@ -24,10 +24,15 @@ class StatsViewController: UIViewController {
     }
     
     func initData(){
-        asyncFethcingData()
+        reRequest()
+        setAutoExecuteRequest()
     }
       
-    func asyncFethcingData(){
+    func setAutoExecuteRequest(){
+        timer = Timer.scheduledTimer(timeInterval: CoronopeConstants.interval, target: self, selector: #selector(reRequest), userInfo: nil, repeats: true)
+    }
+    
+    @objc func reRequest(){
         let group = DispatchGroup()
         group.enter()
         coronopeService.fetchLocalCases()
@@ -42,6 +47,7 @@ class StatsViewController: UIViewController {
         self.confirmedLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
         self.deathLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
         self.recoveredLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
+        confirmedLabelID.dropShadow()
     }
 }
 
