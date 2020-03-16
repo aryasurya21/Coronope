@@ -34,7 +34,7 @@ class CoronopeNewsService {
                 articleList.append(CoronopeNewsModel(
                     title: article.title!,
                     newsUrl: article.url!,
-                    imgUrl: article.urlToImage!
+                    imgUrl: article.urlToImage ?? "-"
                 ))
             }
             return articleList
@@ -49,6 +49,7 @@ class CoronopeNewsService {
             let browser = URLSession(configuration: .default)
             let task = browser.dataTask(with: url) { (data, response, error) in
                 if ( error != nil ){
+                    self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
