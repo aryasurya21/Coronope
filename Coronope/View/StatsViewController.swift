@@ -47,7 +47,6 @@ class StatsViewController: UIViewController {
         self.confirmedLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
         self.deathLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
         self.recoveredLabelID.font = UIFont.boldSystemFont(ofSize: CGFloat(CoronopeConstants.localFontSize))
-        confirmedLabelID.dropShadow()
     }
 }
 

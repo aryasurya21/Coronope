@@ -29,7 +29,6 @@
 		A11412DA241F93830034E6F8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412D8241F93830034E6F8 /* NewsTableViewCell.swift */; };
 		A11412DB241F93830034E6F8 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11412D9241F93830034E6F8 /* NewsTableViewCell.xib */; };
 		A11412DE241FA3AC0034E6F8 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412DD241FA3AC0034E6F8 /* ImageHelper.swift */; };
-		A11412E0241FC9970034E6F8 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412DF241FC9970034E6F8 /* TextHelper.swift */; };
 		E4140AA8797AD5F71DF67926 /* Pods_Coronope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1533C98C628096C00132097 /* Pods_Coronope.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +58,6 @@
 		A11412D8241F93830034E6F8 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		A11412D9241F93830034E6F8 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		A11412DD241FA3AC0034E6F8 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
-		A11412DF241FC9970034E6F8 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		AF12FF8715D164AF931E248E /* Pods-Coronope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronope.release.xcconfig"; path = "Target Support Files/Pods-Coronope/Pods-Coronope.release.xcconfig"; sourceTree = "<group>"; };
 		D1533C98C628096C00132097 /* Pods_Coronope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coronope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -224,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				A11412DD241FA3AC0034E6F8 /* ImageHelper.swift */,
-				A11412DF241FC9970034E6F8 /* TextHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -357,7 +354,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A11412E0241FC9970034E6F8 /* TextHelper.swift in Sources */,
 				A11412CB241F4FEB0034E6F8 /* CoronopeNewsResponseWrapper.swift in Sources */,
 				A11412D6241F56D70034E6F8 /* CoronopeNewsModel.swift in Sources */,
 				A109C177241E134A00CE231B /* NewsViewController.swift in Sources */,

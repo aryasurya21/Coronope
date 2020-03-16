@@ -64,8 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "StatsViewController"
-            landmarkType = "21">
+            landmarkName = "didGetGlobalData(coronopeModel:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "DCD7493D-842A-4150-BAC4-345904DBFEF7 - f833c01611e62b3d"
