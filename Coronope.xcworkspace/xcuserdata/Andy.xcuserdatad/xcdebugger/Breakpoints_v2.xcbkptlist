@@ -62,10 +62,10 @@
             filePath = "Coronope/View/StatsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "didGetGlobalData(coronopeModel:)"
-            landmarkType = "7">
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "StatsViewController"
+            landmarkType = "21">
             <Locations>
                <Location
                   uuid = "DCD7493D-842A-4150-BAC4-345904DBFEF7 - f833c01611e62b3d"
@@ -110,8 +110,8 @@
             filePath = "Coronope/View/StatsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "didGetGlobalData(coronopeModel:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +366,8 @@
             filePath = "Coronope/View/StatsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "didGetGlobalData(coronopeModel:)"
             landmarkType = "7">
          </BreakpointContent>
