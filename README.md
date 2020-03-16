@@ -14,6 +14,9 @@ Coronope is an iOS based application that display current nCoV cases statistics,
 ## Contributing
 Pull requests are welcome. :D
 
+## Demo
+![](demo.gif)
+
 ## License
 
 MIT License
