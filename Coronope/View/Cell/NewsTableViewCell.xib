@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusableCellIdentifier" rowHeight="128" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="Coronope" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ow-G1-Q2U" userLabel="Container View">
+                        <rect key="frame" x="15" y="15" width="314" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T5r-g1-dFR">
+                                <rect key="frame" x="0.0" y="0.0" width="87" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="bW8-dr-rmK"/>
+                                    <constraint firstAttribute="height" constant="100" id="y0F-kU-nqa"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sf-3F-Xge">
+                                <rect key="frame" x="87" y="13" width="227" height="87"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="FCb-Ny-GIG">
+                                        <rect key="frame" x="8" y="0.0" width="219" height="87"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a46-7n-xSx">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="39.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="News Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9r-ak-oJE">
+                                                <rect key="frame" x="0.0" y="47.5" width="114" height="39.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="219" id="6IL-Ae-pBf"/>
+                                            <constraint firstItem="O9r-ak-oJE" firstAttribute="top" secondItem="a46-7n-xSx" secondAttribute="bottom" constant="8" id="No1-Eh-3eI"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FCb-Ny-GIG" secondAttribute="trailing" id="6IY-En-Toc"/>
+                                    <constraint firstItem="FCb-Ny-GIG" firstAttribute="leading" secondItem="0sf-3F-Xge" secondAttribute="leading" constant="8" id="6WF-hL-G6V"/>
+                                    <constraint firstAttribute="height" constant="87" id="EBZ-6w-03B"/>
+                                    <constraint firstAttribute="bottom" secondItem="FCb-Ny-GIG" secondAttribute="bottom" id="Nge-tC-gua"/>
+                                    <constraint firstItem="FCb-Ny-GIG" firstAttribute="top" secondItem="0sf-3F-Xge" secondAttribute="top" id="Vcf-lT-iVi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="9ow-G1-Q2U" secondAttribute="bottom" constant="15" id="8Bj-uq-bHf"/>
+                    <constraint firstItem="9ow-G1-Q2U" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QH6-PH-Jew"/>
+                    <constraint firstItem="9ow-G1-Q2U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="XSj-ak-7j1"/>
+                    <constraint firstAttribute="bottom" secondItem="9ow-G1-Q2U" secondAttribute="bottom" constant="15" id="sba-zU-acz"/>
+                    <constraint firstAttribute="trailing" secondItem="9ow-G1-Q2U" secondAttribute="trailing" constant="15" id="vgR-iy-HDQ"/>
+                    <constraint firstItem="9ow-G1-Q2U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="xX9-nU-3KV"/>
+                    <constraint firstItem="9ow-G1-Q2U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="yWW-Gd-4dA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="0sf-3F-Xge" id="xDh-hg-8tJ"/>
+                <outlet property="newsDescription" destination="O9r-ak-oJE" id="15G-XC-GdW"/>
+                <outlet property="newsImage" destination="T5r-g1-dFR" id="Yec-lQ-nVM"/>
+                <outlet property="newsTitle" destination="a46-7n-xSx" id="XpO-qW-PoT"/>
+            </connections>
+            <point key="canvasLocation" x="166.66666666666669" y="131.91964285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

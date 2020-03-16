@@ -34,7 +34,8 @@ class CoronopeNewsService {
                 articleList.append(CoronopeNewsModel(
                     title: article.title!,
                     newsUrl: article.url!,
-                    imgUrl: article.urlToImage ?? "-"
+                    imgUrl: article.urlToImage ?? "-",
+                    description: article.description ?? "No description available.."
                 ))
             }
             return articleList

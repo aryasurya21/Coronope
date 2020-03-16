@@ -9,7 +9,8 @@
 import Foundation
 
 struct CoronopeNewsModel {
-    var title: String
-    var newsUrl: String
-    var imgUrl: String
+    var title: String?
+    var newsUrl: String?
+    var imgUrl: String?
+    var description: String?
 }

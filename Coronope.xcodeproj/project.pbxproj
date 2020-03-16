@@ -22,12 +22,13 @@
 		A109C1C6241E70D300CE231B /* globalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A109C1C5241E70D300CE231B /* globalImage.png */; };
 		A11412C1241F39B80034E6F8 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A11412C0241F39B70034E6F8 /* backgroundImage.jpg */; };
 		A11412C3241F39C70034E6F8 /* indoimage.png in Resources */ = {isa = PBXBuildFile; fileRef = A11412C2241F39C70034E6F8 /* indoimage.png */; };
-		A11412C6241F3D6B0034E6F8 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412C4241F3D6B0034E6F8 /* NewsTableViewController.swift */; };
-		A11412C7241F3D6B0034E6F8 /* NewsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11412C5241F3D6B0034E6F8 /* NewsTableViewController.xib */; };
 		A11412CB241F4FEB0034E6F8 /* CoronopeNewsResponseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412CA241F4FEB0034E6F8 /* CoronopeNewsResponseWrapper.swift */; };
 		A11412CD241F504F0034E6F8 /* CoronopeNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412CC241F504F0034E6F8 /* CoronopeNewsService.swift */; };
 		A11412D4241F55FB0034E6F8 /* CoronopeNewsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412D3241F55FB0034E6F8 /* CoronopeNewsTarget.swift */; };
 		A11412D6241F56D70034E6F8 /* CoronopeNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412D5241F56D70034E6F8 /* CoronopeNewsModel.swift */; };
+		A11412DA241F93830034E6F8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412D8241F93830034E6F8 /* NewsTableViewCell.swift */; };
+		A11412DB241F93830034E6F8 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11412D9241F93830034E6F8 /* NewsTableViewCell.xib */; };
+		A11412DE241FA3AC0034E6F8 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412DD241FA3AC0034E6F8 /* ImageHelper.swift */; };
 		E4140AA8797AD5F71DF67926 /* Pods_Coronope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1533C98C628096C00132097 /* Pods_Coronope.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,12 +51,13 @@
 		A109C1C5241E70D300CE231B /* globalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globalImage.png; sourceTree = "<group>"; };
 		A11412C0241F39B70034E6F8 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgroundImage.jpg; path = Assets.xcassets/backgroundImage.jpg; sourceTree = "<group>"; };
 		A11412C2241F39C70034E6F8 /* indoimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indoimage.png; path = Assets.xcassets/indoimage.png; sourceTree = "<group>"; };
-		A11412C4241F3D6B0034E6F8 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
-		A11412C5241F3D6B0034E6F8 /* NewsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewController.xib; sourceTree = "<group>"; };
 		A11412CA241F4FEB0034E6F8 /* CoronopeNewsResponseWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeNewsResponseWrapper.swift; sourceTree = "<group>"; };
 		A11412CC241F504F0034E6F8 /* CoronopeNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeNewsService.swift; sourceTree = "<group>"; };
 		A11412D3241F55FB0034E6F8 /* CoronopeNewsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeNewsTarget.swift; sourceTree = "<group>"; };
 		A11412D5241F56D70034E6F8 /* CoronopeNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronopeNewsModel.swift; sourceTree = "<group>"; };
+		A11412D8241F93830034E6F8 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		A11412D9241F93830034E6F8 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		A11412DD241FA3AC0034E6F8 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		AF12FF8715D164AF931E248E /* Pods-Coronope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronope.release.xcconfig"; path = "Target Support Files/Pods-Coronope/Pods-Coronope.release.xcconfig"; sourceTree = "<group>"; };
 		D1533C98C628096C00132097 /* Pods_Coronope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coronope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 		A109C16F241E134A00CE231B /* Coronope */ = {
 			isa = PBXGroup;
 			children = (
+				A11412DC241FA3830034E6F8 /* Helper */,
 				A109C186241E139000CE231B /* API */,
 				A109C1BF241E590F00CE231B /* Constants */,
 				A109C188241E13A500CE231B /* Model */,
@@ -145,11 +148,10 @@
 		A109C189241E13AA00CE231B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A11412D7241F92E30034E6F8 /* Cell */,
 				A109C176241E134A00CE231B /* NewsViewController.swift */,
 				A109C174241E134A00CE231B /* StatsViewController.swift */,
 				A109C1B3241E176C00CE231B /* Main.storyboard */,
-				A11412C4241F3D6B0034E6F8 /* NewsTableViewController.swift */,
-				A11412C5241F3D6B0034E6F8 /* NewsTableViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +207,23 @@
 				A11412D3241F55FB0034E6F8 /* CoronopeNewsTarget.swift */,
 			);
 			path = NewsAPI;
+			sourceTree = "<group>";
+		};
+		A11412D7241F92E30034E6F8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A11412D8241F93830034E6F8 /* NewsTableViewCell.swift */,
+				A11412D9241F93830034E6F8 /* NewsTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A11412DC241FA3830034E6F8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A11412DD241FA3AC0034E6F8 /* ImageHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		B26104716FB2C7D186F6A189 /* Pods */ = {
@@ -277,9 +296,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A109C1C6241E70D300CE231B /* globalImage.png in Resources */,
-				A11412C7241F3D6B0034E6F8 /* NewsTableViewController.xib in Resources */,
 				A109C17F241E134A00CE231B /* LaunchScreen.storyboard in Resources */,
 				A11412C1241F39B80034E6F8 /* backgroundImage.jpg in Resources */,
+				A11412DB241F93830034E6F8 /* NewsTableViewCell.xib in Resources */,
 				A109C17C241E134A00CE231B /* Assets.xcassets in Resources */,
 				A109C1B4241E176C00CE231B /* Main.storyboard in Resources */,
 				A11412C3241F39C70034E6F8 /* indoimage.png in Resources */,
@@ -343,10 +362,11 @@
 				A11412D4241F55FB0034E6F8 /* CoronopeNewsTarget.swift in Sources */,
 				A109C18E241E140800CE231B /* CoronopeStatsService.swift in Sources */,
 				A109C1B6241E297000CE231B /* CoronopeConstants.swift in Sources */,
+				A11412DA241F93830034E6F8 /* NewsTableViewCell.swift in Sources */,
 				A109C171241E134A00CE231B /* AppDelegate.swift in Sources */,
 				A109C173241E134A00CE231B /* SceneDelegate.swift in Sources */,
+				A11412DE241FA3AC0034E6F8 /* ImageHelper.swift in Sources */,
 				A109C1B8241E2AB300CE231B /* CoronopeStatsModel.swift in Sources */,
-				A11412C6241F3D6B0034E6F8 /* NewsTableViewController.swift in Sources */,
 				A109C18C241E13EA00CE231B /* CoronopeStatsResponseWrapper.swift in Sources */,
 				A11412CD241F504F0034E6F8 /* CoronopeNewsService.swift in Sources */,
 			);

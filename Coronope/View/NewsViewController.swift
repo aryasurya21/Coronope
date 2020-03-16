@@ -19,6 +19,7 @@ class NewsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         service.delegate = self
+        tableView.register(UINib(nibName: CoronopeConstants.TableConstants.nibName, bundle: nil), forCellReuseIdentifier: CoronopeConstants.TableConstants.cellIdentifer)
         service.parseNews()
     }
 }
@@ -26,7 +27,9 @@ class NewsViewController: UIViewController {
 extension NewsViewController : CoronopeNewsServiceDelegate {
     func didGetData(articleList: [CoronopeNewsModel]) {
         self.articleList = articleList
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func didFailWithError(error: Error) {
@@ -40,8 +43,11 @@ extension NewsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CoronopeConstants.TableConstants.cellIdentifer,for: indexPath)
-        cell.textLabel?.text = articleList[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: CoronopeConstants.TableConstants.cellIdentifer,for: indexPath) as! NewsTableViewCell
+        cell.newsTitle.text = articleList[indexPath.row].title
+        cell.newsDescription.text = articleList[indexPath.row].description
+        let urlPath = URL(string: articleList[indexPath.row].imgUrl ?? CoronopeConstants.defaultImagePath)!
+        cell.newsImage.downloadImage(from: urlPath)
         return cell
     }
 }
@@ -51,4 +57,3 @@ extension NewsViewController: UITableViewDelegate {
         print(indexPath.row)
     }
 }
-
