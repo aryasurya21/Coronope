@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ArticleResponseWrapper : Decodable {
-    let articles: [ArticleResponse]?
+struct NewsResponseWrapper : Decodable {
+    let articles: [NewsResponse]?
     
     enum CodingKeys: String, CodingKey {
         case articles
@@ -18,11 +18,11 @@ struct ArticleResponseWrapper : Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.articles = try values.decodeIfPresent([ArticleResponse].self, forKey: .articles)
+        self.articles = try values.decodeIfPresent([NewsResponse].self, forKey: .articles)
     }
 }
 
-struct ArticleResponse: Decodable {
+struct NewsResponse: Decodable {
     let title: String?
     let url: String?
     let urlToImage: String?

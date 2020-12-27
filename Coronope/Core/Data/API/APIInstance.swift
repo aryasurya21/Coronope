@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 import Combine
 
-protocol CoronopeCapabilityProtocol {
-    func getNews() -> AnyPublisher<[ArticleResponse], Error>
+protocol APIInstanceCapability {
+    func getNews() -> AnyPublisher<[NewsResponse], Error>
     func getStats() -> AnyPublisher<[StatsResponseWrapper], Error>
 }
 
@@ -23,7 +23,7 @@ final class APIInstance {
     private init(){}
 }
 
-extension APIInstance: CoronopeCapabilityProtocol {
+extension APIInstance: APIInstanceCapability {
     func getStats() -> AnyPublisher<[StatsResponseWrapper], Error> {
         return Future<[StatsResponseWrapper], Error> { (completion) in
             if let url = URL(string: "\(self.statsBaseURL)/indonesia") {
@@ -43,17 +43,19 @@ extension APIInstance: CoronopeCapabilityProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func getNews() -> AnyPublisher<[ArticleResponse], Error> {
+    func getNews() -> AnyPublisher<[NewsResponse], Error> {
         let parameters: Parameters = [
+            "q": "covid",
+            "sortBy": "publishedAt",
             "apiKey": self.newsApiKey,
             "country": "id",
             "category": "health"
         ]
-        return Future<[ArticleResponse], Error> { (completion) in
+        return Future<[NewsResponse], Error> { (completion) in
             if let url = URL(string: "\(self.newsBaseURL)/top-headlines") {
                 AF.request(url, method: .get, parameters: parameters)
                     .validate()
-                    .responseDecodable(of: ArticleResponseWrapper.self) { (response) in
+                    .responseDecodable(of: NewsResponseWrapper.self) { (response) in
                         switch response.result {
                         case .success(let data):
                             completion(.success(data.articles ?? []))

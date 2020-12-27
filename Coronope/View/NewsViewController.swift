@@ -16,8 +16,6 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(UINib(nibName: CoronopeConstants.TableConstants.nibName, bundle: nil), forCellReuseIdentifier: CoronopeConstants.TableConstants.cellIdentifer)
     
     }
