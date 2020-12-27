@@ -11,29 +11,15 @@ import UIKit
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var service = CoronopeNewsService()
+    
     var articleList : [CoronopeNewsModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        service.delegate = self
         tableView.register(UINib(nibName: CoronopeConstants.TableConstants.nibName, bundle: nil), forCellReuseIdentifier: CoronopeConstants.TableConstants.cellIdentifer)
-        service.parseNews()
-    }
-}
-
-extension NewsViewController : CoronopeNewsServiceDelegate {
-    func didGetData(articleList: [CoronopeNewsModel]) {
-        self.articleList = articleList
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
     
-    func didFailWithError(error: Error) {
-        print(error)
     }
 }
 

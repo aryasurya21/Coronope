@@ -6,5 +6,6 @@ target 'Coronope' do
   use_frameworks!
 
   # Pods for Coronope
-  pod "PromiseKit", "~> 6.8"
+  pod "Alamofire"
+  pod "RealmSwift"
 end

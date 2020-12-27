@@ -14,13 +14,13 @@
             filePath = "Coronope/View/StatsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "setupStyle()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "80C94CFB-3D19-4C48-AAEA-1FEBC9BFFD41 - 87480212591e4d92"
+                  uuid = "80C94CFB-3D19-4C48-AAEA-1FEBC9BFFD41 - f99ad7cca97a1063"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -35,7 +35,7 @@
                   offsetFromSymbolStart = "176">
                </Location>
                <Location
-                  uuid = "80C94CFB-3D19-4C48-AAEA-1FEBC9BFFD41 - b80ad104148c3a7"
+                  uuid = "80C94CFB-3D19-4C48-AAEA-1FEBC9BFFD41 - 755278ceb12c9e35"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -50,70 +50,6 @@
                   offsetFromSymbolStart = "133">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DCD7493D-842A-4150-BAC4-345904DBFEF7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coronope/View/StatsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "StatsViewController"
-            landmarkType = "21">
-            <Locations>
-               <Location
-                  uuid = "DCD7493D-842A-4150-BAC4-345904DBFEF7 - f833c01611e62b3d"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Coronope.StatsViewController.didGetLocalData(coronopeModel: Coronope.CoronopeModel) -&gt; ()"
-                  moduleName = "Coronope"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Andy/Documents/Arya/iOS%20Development/Coronope/Coronope/View/StatsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "176">
-               </Location>
-               <Location
-                  uuid = "DCD7493D-842A-4150-BAC4-345904DBFEF7 - 1cdc682b3d9143df"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Coronope.StatsViewController.didGetLocalData(coronopeModel: Coronope.CoronopeModel) -&gt; ()"
-                  moduleName = "Coronope"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Andy/Documents/Arya/iOS%20Development/Coronope/Coronope/View/StatsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "226">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "69C232F7-AACA-487B-8FC1-2EB48507CC7B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coronope/View/StatsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "didGetGlobalData(coronopeModel:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -228,7 +164,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D4CCEC5D-3F23-4C0E-9DB8-B6FE2C626273 - f320e134d6d4a94e"
+                  uuid = "D4CCEC5D-3F23-4C0E-9DB8-B6FE2C626273 - bac6074518e01468"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -243,7 +179,7 @@
                   offsetFromSymbolStart = "453">
                </Location>
                <Location
-                  uuid = "D4CCEC5D-3F23-4C0E-9DB8-B6FE2C626273 - 1b58a06be5cd5070"
+                  uuid = "D4CCEC5D-3F23-4C0E-9DB8-B6FE2C626273 - 52be461a2bf9eeb9"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -318,8 +254,8 @@
             filePath = "Coronope/View/NewsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -359,22 +295,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "93B11400-5AB8-476D-BA8A-7AF05102EA11"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coronope/View/StatsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "didGetGlobalData(coronopeModel:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7CF44C41-1611-46C1-990E-0B30660860B6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -398,8 +318,8 @@
             filePath = "Coronope/View/NewsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -414,8 +334,8 @@
             filePath = "Coronope/View/NewsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -430,8 +350,8 @@
             filePath = "Coronope/View/NewsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
