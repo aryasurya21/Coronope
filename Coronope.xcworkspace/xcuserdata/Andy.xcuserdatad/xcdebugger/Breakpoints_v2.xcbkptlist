@@ -363,22 +363,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "16BC336A-9B53-4053-B05B-FA433C91B527"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coronope/Features/Stats/View/StatsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "bindUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C75FA047-BFB9-4A77-A5EB-70CCBBF7333A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -386,8 +370,8 @@
             filePath = "Coronope/Features/Stats/View/StatsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "bindUI()"
             landmarkType = "7">
          </BreakpointContent>

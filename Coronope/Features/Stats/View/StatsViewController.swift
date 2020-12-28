@@ -10,10 +10,29 @@ import UIKit
 import Combine
 
 class StatsViewController: UIViewController {
-
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     private let presenter: StatsPresenter
     private var cancellableBag = Set<AnyCancellable>()
-
+    private var stats: [(String,UIImage,UIColor,String)] = []
+    
+    private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 16
+        flowLayout.minimumLineSpacing = 16
+        flowLayout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 48)/2, height: 200)
+        return flowLayout
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        activityIndicator.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        activityIndicator.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        activityIndicator.layer.cornerRadius = 6
+        return activityIndicator
+    }()
     
     init(_ presenter: StatsPresenter) {
         self.presenter = presenter
@@ -24,13 +43,55 @@ class StatsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupCollectionView(){
+        self.collectionView.dataSource = self
+        self.collectionView.collectionViewLayout = self.collectionViewLayout
+        self.collectionView.showsVerticalScrollIndicator = false
+        self.collectionView.register(StatsCollectionViewCell.nib, forCellWithReuseIdentifier: StatsCollectionViewCell.identifier)
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.collectionView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.collectionView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.collectionView.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: -32),
+            self.collectionView.heightAnchor.constraint(equalToConstant: 416)
+        ])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.title = "COVID-19 Statistics"
+        self.presenter.getStats()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.getStats()
+        self.setupCollectionView()
+        self.setupActivityIndicator()
         self.bindUI()
     }
     
+    private func setupActivityIndicator(){
+        self.view.addSubview(self.activityIndicator)
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.activityIndicator.heightAnchor.constraint(equalToConstant: 50),
+            self.activityIndicator.widthAnchor.constraint(equalToConstant: 50),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+        ])
+    }
+    
     private func bindUI(){
+        self.presenter.$isLoading.sink { (isLoading) in
+            if isLoading {
+                self.activityIndicator.isHidden = false
+                self.activityIndicator.startAnimating()
+            } else {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            }
+        }.store(in: &self.cancellableBag)
+        
         self.presenter.$error.sink { (error) in
             guard let error = error else { return }
             print(error.localizedDescription)
@@ -38,7 +99,29 @@ class StatsViewController: UIViewController {
         
         self.presenter.$stats.sink{ (data) in
             guard let data = data else { return }
-            print(data)
+            self.stats = []
+            self.stats.append((data.positive, #imageLiteral(resourceName: "stats"), UIColor.systemOrange,"positive"))
+            self.stats.append((data.death, #imageLiteral(resourceName: "stats"), UIColor.systemPink,"death"))
+            self.stats.append((data.recovered, #imageLiteral(resourceName: "stats"), UIColor.systemGreen,"recovered"))
+            self.stats.append((data.treated, #imageLiteral(resourceName: "stats"), UIColor.systemTeal,"treated"))
+            self.collectionView.reloadData()
         }.store(in: &self.cancellableBag)
+    }
+}
+
+extension StatsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.stats.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StatsCollectionViewCell.identifier, for: indexPath) as? StatsCollectionViewCell {
+            cell.countLabel.text = "\(stats[indexPath.row].0)"
+            cell.iconImage.image = stats[indexPath.row].1
+            cell.containerView.backgroundColor = stats[indexPath.row].2
+            cell.explanationLabel.text = stats[indexPath.row].3
+            return cell
+        }
+        return UICollectionViewCell()
     }
 }
