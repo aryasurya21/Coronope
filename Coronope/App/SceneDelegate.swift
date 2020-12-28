@@ -23,9 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func setupRootController() -> UINavigationController {
         let tabbar = UITabBarController()
-        let statsVC = StatsViewController()
+        let newsPresenter = Injector.shared.injectNewsPresenter()
+        let statsPresenter = Injector.shared.injectStatsPresenter()
+        
+        let statsVC = StatsViewController(statsPresenter)
         statsVC.tabBarItem = UITabBarItem(title: "Stats", image: #imageLiteral(resourceName: "stats"), tag: 0)
-        let newsVC = NewsViewController()
+        let newsVC = NewsViewController(newsPresenter)
         newsVC.tabBarItem = UITabBarItem(title: "News", image: #imageLiteral(resourceName: "news"), tag: 1)
         tabbar.viewControllers = [statsVC, newsVC]
         tabbar.selectedIndex = 0

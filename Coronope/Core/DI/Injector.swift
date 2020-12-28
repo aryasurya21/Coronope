@@ -22,11 +22,19 @@ final class Injector {
         return CoronopeRepository.shared(api, locale)
     }
     
-    public func injectStatsInteractor() -> StatsUseCase {
+    private func injectStatsInteractor() -> StatsUseCase {
         return StatsInteractor(self.injectRepository())
     }
     
-    public func injectNewsInteractor() -> NewsUseCase {
+    private func injectNewsInteractor() -> NewsUseCase {
         return NewsInteractor(self.injectRepository())
+    }
+    
+    public func injectStatsPresenter() -> StatsPresenter {
+        return StatsPresenter(usecase: self.injectStatsInteractor())
+    }
+    
+    public func injectNewsPresenter() -> NewsPresenter {
+        return NewsPresenter(usecase: self.injectNewsInteractor())
     }
 }

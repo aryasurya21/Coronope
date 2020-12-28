@@ -9,10 +9,20 @@
 import UIKit
 
 class NewsViewController: UIViewController {
-
+    
+    private let presenter: NewsPresenter
+    
+    init(_ presenter: NewsPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.presenter.getNews()
     }
 }

@@ -33,7 +33,8 @@ extension APIInstance: APIInstanceCapability {
                         switch response.result {
                         case .success(let data):
                             completion(.success(data))
-                        case .failure:
+                        case .failure(let err):
+                            print(err.localizedDescription)
                             completion(.failure(CoronopeAPIError.apiError))
                         }
                     }
