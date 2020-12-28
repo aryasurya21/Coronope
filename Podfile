@@ -8,4 +8,6 @@ target 'Coronope' do
   # Pods for Coronope
   pod "Alamofire"
   pod "RealmSwift"
+  pod "RxSwift"
+  pod "RxCocoa"
 end
