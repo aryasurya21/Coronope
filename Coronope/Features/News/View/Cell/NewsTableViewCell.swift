@@ -10,15 +10,21 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.containerView.layer.masksToBounds = true
+        self.containerView.clipsToBounds = true
         self.containerView.layer.cornerRadius = 10
+        self.shadowView.layer.cornerRadius = 10
         self.containerView.backgroundColor = .systemYellow
+        self.shadowView.layer.shadowColor = UIColor.lightGray.cgColor
+        self.shadowView.layer.shadowRadius = 8
+        self.shadowView.layer.shadowOpacity = 0.5
+        self.shadowView.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

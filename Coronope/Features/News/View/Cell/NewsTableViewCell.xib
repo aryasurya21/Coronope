@@ -17,6 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ai2-FJ-7st">
+                        <rect key="frame" x="8" y="8" width="304" height="132"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sN4-jW-HIc">
                         <rect key="frame" x="8" y="8" width="304" height="132"/>
                         <subviews>
@@ -47,8 +51,12 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Ai2-FJ-7st" firstAttribute="bottom" secondItem="sN4-jW-HIc" secondAttribute="bottom" id="9de-Sx-00h"/>
                     <constraint firstItem="sN4-jW-HIc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ap0-11-IcJ"/>
+                    <constraint firstItem="Ai2-FJ-7st" firstAttribute="top" secondItem="sN4-jW-HIc" secondAttribute="top" id="VLN-6M-nW0"/>
+                    <constraint firstItem="Ai2-FJ-7st" firstAttribute="leading" secondItem="sN4-jW-HIc" secondAttribute="leading" id="ZFE-oZ-GKl"/>
                     <constraint firstItem="sN4-jW-HIc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fxM-Qu-QvM"/>
+                    <constraint firstItem="Ai2-FJ-7st" firstAttribute="trailing" secondItem="sN4-jW-HIc" secondAttribute="trailing" id="hgh-gj-HE6"/>
                     <constraint firstAttribute="bottom" secondItem="sN4-jW-HIc" secondAttribute="bottom" constant="8" id="o1P-LF-LVI"/>
                     <constraint firstItem="sN4-jW-HIc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sYw-SH-EAN"/>
                     <constraint firstAttribute="trailing" secondItem="sN4-jW-HIc" secondAttribute="trailing" constant="8" id="uBW-ex-EjC"/>
@@ -59,6 +67,7 @@
                 <outlet property="containerView" destination="sN4-jW-HIc" id="c7E-gY-f9B"/>
                 <outlet property="newsImageView" destination="rv1-on-KeB" id="jSY-Ow-JMO"/>
                 <outlet property="newsTitle" destination="mGd-Uz-acz" id="jZ3-yj-Xad"/>
+                <outlet property="shadowView" destination="Ai2-FJ-7st" id="mgY-S0-j5F"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="82.366071428571431"/>
         </tableViewCell>
