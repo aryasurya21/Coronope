@@ -18,7 +18,6 @@
 		A11412CB241F4FEB0034E6F8 /* NewsResponseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412CA241F4FEB0034E6F8 /* NewsResponseWrapper.swift */; };
 		A11412D4241F55FB0034E6F8 /* APIInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412D3241F55FB0034E6F8 /* APIInstance.swift */; };
 		A11412DE241FA3AC0034E6F8 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11412DD241FA3AC0034E6F8 /* UIImageView+Ext.swift */; };
-		A11412E2241FD3AB0034E6F8 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = A11412E1241FD3AB0034E6F8 /* demo.gif */; };
 		A124E8112598927A0070FBA5 /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124E8102598927A0070FBA5 /* NewsEntity.swift */; };
 		A124E81A2598936B0070FBA5 /* LocaleInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124E8192598936B0070FBA5 /* LocaleInstance.swift */; };
 		A124E81E259896BD0070FBA5 /* RealmResults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124E81D259896BD0070FBA5 /* RealmResults+Ext.swift */; };
@@ -60,7 +59,6 @@
 		A11412CA241F4FEB0034E6F8 /* NewsResponseWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponseWrapper.swift; sourceTree = "<group>"; };
 		A11412D3241F55FB0034E6F8 /* APIInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInstance.swift; sourceTree = "<group>"; };
 		A11412DD241FA3AC0034E6F8 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
-		A11412E1241FD3AB0034E6F8 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = SOURCE_ROOT; };
 		A124E8102598927A0070FBA5 /* NewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		A124E8192598936B0070FBA5 /* LocaleInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleInstance.swift; sourceTree = "<group>"; };
 		A124E81D259896BD0070FBA5 /* RealmResults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmResults+Ext.swift"; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 		A11412BF241F39480034E6F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				A11412E1241FD3AB0034E6F8 /* demo.gif */,
 				A109C17B241E134A00CE231B /* Assets.xcassets */,
 				A11412C2241F39C70034E6F8 /* indoimage.png */,
 				A109C1C5241E70D300CE231B /* globalImage.png */,
@@ -437,7 +434,6 @@
 				A1BC43DA259AE69B0017AD35 /* NewsTableViewCell.xib in Resources */,
 				A1CBEB6F2598BBD800A747B9 /* NewsViewController.xib in Resources */,
 				A109C17C241E134A00CE231B /* Assets.xcassets in Resources */,
-				A11412E2241FD3AB0034E6F8 /* demo.gif in Resources */,
 				A11412C3241F39C70034E6F8 /* indoimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

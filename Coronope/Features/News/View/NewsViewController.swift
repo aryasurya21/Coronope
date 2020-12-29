@@ -95,7 +95,19 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: 0, y: cell.frame.height)
+        cell.alpha = 0
         cell.selectionStyle = .none
+        UIView.animate(
+            withDuration: 1.2,
+            delay: 0.02,
+            usingSpringWithDamping: 0.6,
+            initialSpringVelocity: 0.1,
+            options: [.curveEaseInOut],
+            animations: {
+                cell.alpha = 1
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

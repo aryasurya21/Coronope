@@ -45,6 +45,8 @@ class StatsViewController: UIViewController {
     
     private func setupCollectionView(){
         self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        self.collectionView.contentInset = UIEdgeInsets(top: 42, left: 0, bottom: 42, right: 0)
         self.collectionView.collectionViewLayout = self.collectionViewLayout
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.register(StatsCollectionViewCell.nib, forCellWithReuseIdentifier: StatsCollectionViewCell.identifier)
@@ -53,7 +55,7 @@ class StatsViewController: UIViewController {
             self.collectionView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             self.collectionView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.collectionView.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: -32),
-            self.collectionView.heightAnchor.constraint(equalToConstant: 416)
+            self.collectionView.heightAnchor.constraint(equalToConstant: 500)
         ])
     }
     
@@ -84,9 +86,11 @@ class StatsViewController: UIViewController {
     private func bindUI(){
         self.presenter.$isLoading.sink { (isLoading) in
             if isLoading {
+                self.collectionView.isHidden = true
                 self.activityIndicator.isHidden = false
                 self.activityIndicator.startAnimating()
             } else {
+                self.collectionView.isHidden = false
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
             }
@@ -123,5 +127,22 @@ extension StatsViewController: UICollectionViewDataSource {
             return cell
         }
         return UICollectionViewCell()
+    }
+}
+
+extension StatsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: 0, y: cell.frame.height)
+        cell.alpha = 0
+        UIView.animate(
+            withDuration: 1.2,
+            delay: 0.02,
+            usingSpringWithDamping: 0.6,
+            initialSpringVelocity: 0.1,
+            options: [.curveEaseInOut],
+            animations: {
+                cell.alpha = 1
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
     }
 }
