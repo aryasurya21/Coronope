@@ -26,6 +26,22 @@ class NewsViewController: UIViewController {
         return activityIndicator
     }()
     
+    private lazy var errorView: UIView = {
+        let view = UIStackView()
+        let label = UILabel()
+        
+        view.axis = .vertical
+        label.text = "Something went wrong. Please try again. :("
+        view.addArrangedSubview(label)
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(self.reload), for: .touchUpInside)
+        btn.backgroundColor = .red
+        btn.setTitle("TRY AGAIN", for: .normal)
+        btn.layer.cornerRadius = 10
+        view.addArrangedSubview(btn)
+        return view
+    }()
+    
     init(_ presenter: NewsPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
@@ -44,7 +60,30 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
+        self.setupActivityIndicator()
+        self.setupErrorView()
         self.bindUI()
+    }
+    
+    private func setupActivityIndicator(){
+        self.view.addSubview(self.activityIndicator)
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.activityIndicator.heightAnchor.constraint(equalToConstant: 50),
+            self.activityIndicator.widthAnchor.constraint(equalToConstant: 50),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+        ])
+    }
+    
+    private func setupErrorView(){
+        self.view.addSubview(self.errorView)
+        self.errorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.errorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.errorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+        ])
+        self.errorView.isHidden = true
     }
     
     private func setupTableView(){
@@ -57,12 +96,15 @@ class NewsViewController: UIViewController {
     
     private func bindUI(){
         self.presenter.$news.sink { (news) in
+            self.errorView.isHidden = true
+            self.tableView.isHidden = false
             guard let news = news else { return }
             self.newsData = news
             self.tableView.reloadData()
         }.store(in: &self.cancellableBag)
         
         self.presenter.$isLoading.sink { (isLoading) in
+            self.errorView.isHidden = true
             if isLoading {
                 self.activityIndicator.isHidden = false
                 self.activityIndicator.startAnimating()
@@ -73,8 +115,12 @@ class NewsViewController: UIViewController {
         }.store(in: &self.cancellableBag)
         
         self.presenter.$error.sink { (error) in
-            guard let error = error else { return }
-            print(error.localizedDescription)
+            guard let _ = error else { return }
+            DispatchQueue.main.async {
+                self.errorView.isHidden = false
+                self.tableView.isHidden = true
+                self.activityIndicator.isHidden = true
+            }
         }.store(in: &self.cancellableBag)
     }
 }
@@ -90,6 +136,10 @@ extension NewsViewController: UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    @objc func reload(){
+        self.presenter.getNews()
     }
 }
 

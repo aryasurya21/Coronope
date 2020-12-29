@@ -25,6 +25,22 @@ class StatsViewController: UIViewController {
         return flowLayout
     }()
     
+    private lazy var errorView: UIView = {
+        let view = UIStackView()
+        let label = UILabel()
+        
+        view.axis = .vertical
+        label.text = "Something went wrong. Please try again. :("
+        view.addArrangedSubview(label)
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(self.reload), for: .touchUpInside)
+        btn.backgroundColor = .red
+        btn.setTitle("TRY AGAIN", for: .normal)
+        btn.layer.cornerRadius = 10
+        view.addArrangedSubview(btn)
+        return view
+    }()
+    
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
@@ -68,8 +84,19 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
+        self.setupErrorView()
         self.setupActivityIndicator()
         self.bindUI()
+    }
+    
+    private func setupErrorView(){
+        self.view.addSubview(self.errorView)
+        self.errorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.errorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.errorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+        ])
+        self.errorView.isHidden = true
     }
     
     private func setupActivityIndicator(){
@@ -85,6 +112,7 @@ class StatsViewController: UIViewController {
     
     private func bindUI(){
         self.presenter.$isLoading.sink { (isLoading) in
+            self.errorView.isHidden = true
             if isLoading {
                 self.collectionView.isHidden = true
                 self.activityIndicator.isHidden = false
@@ -97,12 +125,18 @@ class StatsViewController: UIViewController {
         }.store(in: &self.cancellableBag)
         
         self.presenter.$error.sink { (error) in
-            guard let error = error else { return }
-            print(error.localizedDescription)
+            guard let _ = error else { return }
+            DispatchQueue.main.async {
+                self.errorView.isHidden = false
+                self.collectionView.isHidden = true
+                self.activityIndicator.isHidden = true
+            }
         }.store(in: &self.cancellableBag)
         
         self.presenter.$stats.sink{ (data) in
             guard let data = data else { return }
+            self.errorView.isHidden = true
+            self.collectionView.isHidden = false
             self.stats = []
             self.stats.append((data.positive, #imageLiteral(resourceName: "stats"), UIColor.systemOrange,"positive"))
             self.stats.append((data.death, #imageLiteral(resourceName: "stats"), UIColor.systemPink,"death"))
@@ -110,6 +144,10 @@ class StatsViewController: UIViewController {
             self.stats.append((data.treated, #imageLiteral(resourceName: "stats"), UIColor.systemTeal,"treated"))
             self.collectionView.reloadData()
         }.store(in: &self.cancellableBag)
+    }
+    
+    @objc func reload(){
+        self.presenter.getStats()
     }
 }
 

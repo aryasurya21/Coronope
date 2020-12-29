@@ -35,6 +35,8 @@ class NewsTableViewCell: UITableViewCell {
     
     public func setData(_ news: NewsModel){
         self.newsTitle.text = news.title
-        self.newsImageView.downloadImage(from: URL(string: news.urlToImage)!)
+        if let url = URL(string: news.urlToImage) {
+            self.newsImageView.downloadImage(from: url)
+        }
     }
 }
