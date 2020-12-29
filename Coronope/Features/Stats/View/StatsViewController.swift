@@ -138,10 +138,10 @@ class StatsViewController: UIViewController {
             self.errorView.isHidden = true
             self.collectionView.isHidden = false
             self.stats = []
-            self.stats.append((data.positive, #imageLiteral(resourceName: "stats"), UIColor.systemOrange,"positive"))
-            self.stats.append((data.death, #imageLiteral(resourceName: "stats"), UIColor.systemPink,"death"))
-            self.stats.append((data.recovered, #imageLiteral(resourceName: "stats"), UIColor.systemGreen,"recovered"))
-            self.stats.append((data.treated, #imageLiteral(resourceName: "stats"), UIColor.systemTeal,"treated"))
+            self.stats.append((data.positive, #imageLiteral(resourceName: "icon-positive"), UIColor.systemOrange,"positive"))
+            self.stats.append((data.death, #imageLiteral(resourceName: "icon-dead"), UIColor.systemPink,"death"))
+            self.stats.append((data.recovered, #imageLiteral(resourceName: "icon-happy"), UIColor.systemGreen,"recovered"))
+            self.stats.append((data.treated, #imageLiteral(resourceName: "icon-treated"), UIColor.systemTeal,"treated"))
             self.collectionView.reloadData()
         }.store(in: &self.cancellableBag)
     }

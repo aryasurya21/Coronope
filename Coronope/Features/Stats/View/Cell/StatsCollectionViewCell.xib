@@ -21,23 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="151" height="179"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Nzc-WY-vYc">
-                                <rect key="frame" x="8" y="14.5" width="135.5" height="150.5"/>
+                                <rect key="frame" x="8" y="9.5" width="135.5" height="160.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-gZ-t9l">
-                                        <rect key="frame" x="52.5" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="47.5" y="0.0" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="An4-RM-8H6"/>
-                                            <constraint firstAttribute="height" constant="30" id="Syw-9U-0Nt"/>
+                                            <constraint firstAttribute="width" constant="40" id="An4-RM-8H6"/>
+                                            <constraint firstAttribute="height" constant="40" id="Syw-9U-0Nt"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjr-h9-Tak">
-                                        <rect key="frame" x="0.0" y="62" width="135.5" height="36"/>
+                                        <rect key="frame" x="0.0" y="72" width="135.5" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMa-H4-gjk">
-                                        <rect key="frame" x="47" y="130" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="47" y="140" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
