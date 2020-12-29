@@ -1,24 +1,27 @@
 # Coronope ( Corona? Just Nope. ) 🙅🙅
-Coronope is an iOS based application that display current nCoV cases statistics, Local ( Indonesia ) and Globally, and news related to the outbreak 
+Coronope is an iOS based application that display current COVID-19 cases statistics locally ( Indonesia ), and news related to the pandemic.
 
 ## Corona Virus Tracker and News
-+ consist of live data of confirmed, recovered, and deaths cases of nCoV in Indonesia which updated every half an hour
-+ consist of list of news about the current outbreak
++ consist of live data of confirmed, recovered, treated and deaths cases of COVID-19 in Indonesia
++ consist of news list about the current outbreak
 
 ## Architecture
-+ Model : Model for Data Container and Response Wrapper from JSON
-+ View : Literally the View used, consisting of cells of table view and View Controllers
-+ Service : The Main Logic of the Application, consisting of network parsing ( could be refactored more in the future ), and data flow logic
-+ API : The End Point Target used to fetch the data
++ View : Display what it is told to by the Presenter and relays user input back to the Presenter.
++ Interactor : Contains the business logic as specified by a use case.
++ Presenter : Contains view logic for preparing content for display ( received from the Interactor ) and for reacting to events ( by requesting new data from the Interactor ).
++ Entity : Basic model objects used by the Interactor. 
++ Router : Control navigation between screens ( I don't use a router layer since this is a simple app and thus don't require any navigation )
 
 ## Contributing
 Pull requests are welcome. :D
 
+## Frameworks Used
++ Alamofire 
++ Realm 
++ Combine 
+
 ## Demo
 ![](demo.gif)
-
-## Credit
-- github.com/alfianlosari for the nCoV API 
 
 ## License
 
