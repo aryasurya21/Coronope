@@ -33,7 +33,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabbar.viewControllers = [statsVC, newsVC]
         tabbar.selectedIndex = 0
         let navController = UINavigationController(rootViewController: tabbar)
-        
         return navController
     }
     

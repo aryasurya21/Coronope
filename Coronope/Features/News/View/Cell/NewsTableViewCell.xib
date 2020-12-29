@@ -24,7 +24,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sN4-jW-HIc">
                         <rect key="frame" x="8" y="8" width="304" height="132"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globalImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="rv1-on-KeB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coronope.png" translatesAutoresizingMaskIntoConstraints="NO" id="rv1-on-KeB">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="9RK-nD-eFB"/>
@@ -73,7 +73,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="globalImage.png" width="350" height="350"/>
+        <image name="coronope.png" width="375" height="375"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
