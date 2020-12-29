@@ -9,8 +9,8 @@
 import UIKit
 
 class StatsCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var explanationLabel: UILabel!
     
+    @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
