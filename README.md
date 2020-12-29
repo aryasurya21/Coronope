@@ -21,7 +21,7 @@ Pull requests are welcome. :D
 + Combine 
 
 ## Demo
-![](demo.gif)
+<img src="demo.gif" width="200" height="400"/>
 
 ## License
 
